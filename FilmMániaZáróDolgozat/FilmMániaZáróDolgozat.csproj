@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{51214472-7035-4A7A-811E-A533E234BB91}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FilmMániaZáróDolgozat</RootNamespace>
+    <AssemblyName>FilmMániaZáróDolgozat</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\ActorSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActorSearch.Designer.cs">
+      <DependentUpon>ActorSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ActorSearchResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActorSearchResult.Designer.cs">
+      <DependentUpon>ActorSearchResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ActorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActorView.Designer.cs">
+      <DependentUpon>ActorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminInterface.Designer.cs">
+      <DependentUpon>AdminInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Connection.cs" />
+    <Compile Include="Database\CreateConnections.cs" />
+    <Compile Include="Database\Database Exceptions\DatabaseCreateException.cs" />
+    <Compile Include="Database\Database Exceptions\InsertTestUsersException.cs" />
+    <Compile Include="Database\Database Exceptions\TableCreatingException.cs" />
+    <Compile Include="Forms\DirectorSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DirectorSearch.Designer.cs">
+      <DependentUpon>DirectorSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DirectorSearchResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DirectorSearchResult.Designer.cs">
+      <DependentUpon>DirectorSearchResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DirectorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DirectorView.Designer.cs">
+      <DependentUpon>DirectorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModellExceptions\ModellUserNotValidNameException.cs" />
+    <Compile Include="ModellExceptions\ModellUserNotValidEmailException.cs" />
+    <Compile Include="ModellExceptions\ModellUserNotValidPasswordException.cs" />
+    <Compile Include="ModellExceptions\ModellMovieNotValidTitleUpperCaseException.cs" />
+    <Compile Include="ModellExceptions\ModellMovieNotValidYearException.cs" />
+    <Compile Include="Modell\Actor.cs" />
+    <Compile Include="Modell\Director.cs" />
+    <Compile Include="ModellExceptions\ModellMovieNotValidRatingException.cs" />
+    <Compile Include="ModellExceptions\ModellDirectorNotValidNameException.cs" />
+    <Compile Include="ModellExceptions\ModellActorIsValidNameException.cs" />
+    <Compile Include="ModellExceptions\ModellMovieNotValidYearLengthException.cs" />
+    <Compile Include="ModellExceptions\ModellMovieNotValidYearAllCharIsNumber.cs" />
+    <Compile Include="ModellExceptions\ModellMovieNotValidYearNotMoreThan1850.cs" />
+    <Compile Include="ModellExceptions\ModellMovieNotValidTitleException.cs" />
+    <Compile Include="Modell\Favourites.cs" />
+    <Compile Include="ModellExceptions\ModellProjectionNotValidPriceException.cs" />
+    <Compile Include="Modell\Movie.cs" />
+    <Compile Include="Modell\MoviesInFavourites.cs" />
+    <Compile Include="Modell\Projection.cs" />
+    <Compile Include="Modell\User.cs" />
+    <Compile Include="Modell\UserDatabase.cs" />
+    <Compile Include="Modell\UserLogin.cs" />
+    <Compile Include="Forms\MovieView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MovieView.Designer.cs">
+      <DependentUpon>MovieView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MovieSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MovieSearch.Designer.cs">
+      <DependentUpon>MovieSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MovieSearchResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MovieSearchResult.Designer.cs">
+      <DependentUpon>MovieSearchResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserInterface.Designer.cs">
+      <DependentUpon>UserInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RepositoryExceptions\RepositoryException.cs" />
+    <Compile Include="Repository\RepositoryActor.cs" />
+    <Compile Include="Repository\RepositoryDirector.cs" />
+    <Compile Include="Repository\RepositoryFavourites.cs" />
+    <Compile Include="Repository\RepositoryMovie.cs" />
+    <Compile Include="Repository\RepositoryMoviesInFavourites.cs" />
+    <Compile Include="Repository\RepositoryProjection.cs" />
+    <EmbeddedResource Include="Forms\ActorSearch.resx">
+      <DependentUpon>ActorSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActorSearchResult.resx">
+      <DependentUpon>ActorSearchResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActorView.resx">
+      <DependentUpon>ActorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminInterface.resx">
+      <DependentUpon>AdminInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DirectorSearch.resx">
+      <DependentUpon>DirectorSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DirectorSearchResult.resx">
+      <DependentUpon>DirectorSearchResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DirectorView.resx">
+      <DependentUpon>DirectorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MovieSearch.resx">
+      <DependentUpon>MovieSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MovieSearchResult.resx">
+      <DependentUpon>MovieSearchResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MovieView.resx">
+      <DependentUpon>MovieView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserInterface.resx">
+      <DependentUpon>UserInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgound.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\iconfinder_--03_1720778.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\logout_log_out-512.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\iconfinder_--03_1720778.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\adatlappp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\adatlappp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\document-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\csapó.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\background2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\iconfinder_11_Search_106236.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\iconfinder_11_Search_106236.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\Képkivágás.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\vissza.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\admin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\user.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\register.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\Black-and-White-Cinema-Backgrounds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\Black-and-White-Cinema-Backgrounds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\kedvencc.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

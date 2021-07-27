@@ -1,0 +1,149 @@
+.carousel-item {
+    height: 80vh;
+}
+
+.w-100 {
+    height: 80vh;
+}
+
+.movie-card, .reserved-card, .select-chair {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.screen {
+    border: 5px solid black;
+    margin-bottom: 21px;
+}
+.select-chair label{
+    position: absolute;
+    right: 20px;
+}
+input[type=checkbox]{
+    width: 10mm;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 10mm;
+    border: 0.1mm solid black;
+}
+.movie-card p{
+    text-align: justify;
+}
+input[type=checkbox]:checked{
+    background-color: lightblue;
+}
+input[type=checkbox]:checked:after{
+    margin-left: 4.3mm;
+    margin-top: -0.4mm;
+    width: 3mm;
+    height: 10mm;
+    border: solid white;
+    border-width: 0 2mm 2mm 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: "";
+    display: inline-block;
+}
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+
+.flip-box {
+    background-color: transparent;
+    width: 400px;
+    margin: 30px;
+    padding: 30px;
+    height: 550px;
+    border: none;
+    perspective: 1000px;
+    /* Remove this if you don't want the 3D effect */
+}
+
+
+/* This container is needed to position the front and back side */
+
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* Position the front and back side */
+
+.flip-box-front,
+.flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+
+/* Style the front side */
+
+.flip-box-front {
+    background-color: white;
+    color: black;
+    text-align: left;
+}
+
+
+/* Style the back side */
+
+.flip-box-back {
+    background-color: white;
+    color: black;
+    transform: rotateY(180deg);
+}
+
+.flip-box-back p {
+    text-align: justify;
+
+}
+
+.movieimg {
+    heigth: auto;
+    width: 250px;
+}
+.reserved h3{
+    position: absolute;
+    left: 25%;
+    bottom: 7%;
+}
+
+.navbar {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+    background-color: #9fcdff!important;
+}
+
+.logo {
+    height:auto;
+    width:4rem;
+    border-radius: 50%;
+    margin-right: 0.5cm;
+}
+
+
+.delete {
+
+    cursor: pointer;
+
+
+
+}

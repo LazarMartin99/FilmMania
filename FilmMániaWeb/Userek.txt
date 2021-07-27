@@ -1,0 +1,5 @@
+Tiszta felhasználó: username-tesztember
+		    password-teszt12345
+
+Admin:		    username-admin
+		    password-admin12345
